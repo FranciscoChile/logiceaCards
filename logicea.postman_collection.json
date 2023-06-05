@@ -1,0 +1,407 @@
+{
+	"info": {
+		"_postman_id": "e8bf9132-c99f-459e-949f-dd7a26dfdad3",
+		"name": "logicea",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2276448"
+	},
+	"item": [
+		{
+			"name": "localhost:8080/authenticate",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\" : \"fran@world.com\",\n    \"password\" : \"holamundo\"\n//    \"email\" : \"hello@world.com\",\n//    \"password\" : \"password\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/authenticate",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"authenticate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/api/users",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJoZWxsb0B3b3JsZC5jb20iLCJleHAiOjE2ODU1NjczODksImlhdCI6MTY4NTU0OTM4OX0.7mzPQB65JauiVjAIk8UyfMT_8zdbYees1pwSZVezcDu04UFVTTHE4k29Mmr524WKO8LOexlLWO1HlaTZzKq9hg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/users/hello@world.com",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"users",
+						"hello@world.com"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/api/users/all",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJoZWxsb0B3b3JsZC5jb20iLCJleHAiOjE2ODU1NjczODksImlhdCI6MTY4NTU0OTM4OX0.7mzPQB65JauiVjAIk8UyfMT_8zdbYees1pwSZVezcDu04UFVTTHE4k29Mmr524WKO8LOexlLWO1HlaTZzKq9hg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/users/all",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"users",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/api/users",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJoZWxsb0B3b3JsZC5jb20iLCJleHAiOjE2ODU1MDU5MTIsImlhdCI6MTY4NTQ4NzkxMn0.LaMtpaVudfgEayd2kVJ3d4wjGYf3G-6AONjKu6XJLznCR5CpGd44riUJZSf0enkmsU5yssb-toHFkq8GW2DbnA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\" : \"test2@world.com\",\n    \"role\": \"Member\",\n    \"password\":\"$2a$10$slYQmyNdGzTn7ZLBXBChFOC9f6kFjAqPhccnP6DxlWXx2lPk1C3G6\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/users",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create cards",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJmcmFuQHdvcmxkLmNvbSIsImV4cCI6MTY4NTc4NjQ1NywiaWF0IjoxNjg1NzY4NDU3fQ.VnMJRebGOLHmhEcEHE_PlnBnARUEUqiCFTUzUtV9Qa4OrYxn9NzCDEkbiC2SV60hgjPmfgrCiHI8p2FcfWnH_A",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"card123\",\n    \"email\": \"fran@world.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/cards",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"cards"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete one card",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJoZWxsb0B3b3JsZC5jb20iLCJleHAiOjE2ODU1MjczODUsImlhdCI6MTY4NTUwOTM4NX0.mQ1h6ITSXzAf6yFDaEHrEV2uYuo5kkPzLxiV7rBPIDhMi9PdzqellNnLeTq8zyxy7VfNuwNo6oqM1OqngjN3vA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/cards/8/9",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"cards",
+						"8",
+						"9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get one card",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJoZWxsb0B3b3JsZC5jb20iLCJleHAiOjE2ODU1ODc0MTcsImlhdCI6MTY4NTU2OTQxN30.kTFqQoRIZ6nEzJFv22dkrsTJdwfeNirHg-sUQsVKOGnWty4zRjeX41GlnieuvseS8rFXqDbb4U8_ob2Ag2ELBA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\" : 3,\n    \"email\": \"fran@world.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/cards",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"cards"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "search",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJmcmFuQHdvcmxkLmNvbSIsImV4cCI6MTY4NTc4ODAzMiwiaWF0IjoxNjg1NzcwMDMyfQ.le2C-3FZqS7yUfvDopJjBx7Lc-rWsnX2tv7Nqx0t-MEWxWdsf7QRktOEAq_OqdASd2L2Bmb6fA2H2N7Z8Qac3w",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"dataOption\": \"all\",\n    \"searchCriteriaList\": [\n        {\n            \"filterKey\": \"email\",\n            \"operation\": \"eq\",\n            \"value\":\"fran@world.com\"\n        }\n    ]    \n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/cards/search",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"cards",
+						"search"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "search and paginator",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJmcmFuQHdvcmxkLmNvbSIsImV4cCI6MTY4NTc4NjQ1NywiaWF0IjoxNjg1NzY4NDU3fQ.VnMJRebGOLHmhEcEHE_PlnBnARUEUqiCFTUzUtV9Qa4OrYxn9NzCDEkbiC2SV60hgjPmfgrCiHI8p2FcfWnH_A",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"dataOption\": \"all\",\n    \"searchCriteriaList\": [\n        {\n            \"filterKey\": \"email\",\n            \"operation\": \"eq\",\n            \"value\":\"fran@world.com\"\n        }\n    ]    \n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/cards/search?pageNum=0&pageSize=5",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"cards",
+						"search"
+					],
+					"query": [
+						{
+							"key": "pageNum",
+							"value": "0"
+						},
+						{
+							"key": "pageSize",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update card",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJmcmFuQHdvcmxkLmNvbSIsImV4cCI6MTY4NTc4NjQ1NywiaWF0IjoxNjg1NzY4NDU3fQ.VnMJRebGOLHmhEcEHE_PlnBnARUEUqiCFTUzUtV9Qa4OrYxn9NzCDEkbiC2SV60hgjPmfgrCiHI8p2FcfWnH_A",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\" :4,\n    \"description\": \"\",\n    \"color\":\"\"\n    \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/cards",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"cards"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/swagger-ui.html",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJmcmFuQHdvcmxkLmNvbSIsImV4cCI6MTY4NTc5MDgyOCwiaWF0IjoxNjg1NzcyODI4fQ.7KtXghHhyh10MLVa8pLLl1LEUesRWNIg5qSs5uQIDVSq1PD_D9aB1snnrIdqxotF6iWa9PSidKuguDVIUgZXog",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/v3/api-docs",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v3",
+						"api-docs"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
