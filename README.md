@@ -1,16 +1,20 @@
 ## Spring Boot
 
-1. Se incluye código fuente
-2. Se incluye archivo Postman para pruebas y generación de token de autenticación
-3. No se incluye script de base datos pues se crea en forma automática en memoria
+Included:
+1. Source code
+2. Postman collection
+3. Database script but JPA create it when it is not exist
 
-# How to build and deploy
-1. Bajar codigo fuente
-2. Se incluye jar
-3. 
-4. Importar archivo Postman para generar token ó usar Curl
+# How to test
+1. Pull this repo
+2. Jar included
+3. Import Postman file
+4. Generate token using /authenticate
+5. Add token on each call (authorization field)
+6. Source code include unit tests
 
+# Requirements
+Everything was implemented and tested in diverse scenarios, except Role Admin when is using /search 
 
-5. Crear usuario con Postman ó usar Curl (reemplazar TOKEN)
-
-
+# Documentation
+Swagger JSON is working but UI it's not
