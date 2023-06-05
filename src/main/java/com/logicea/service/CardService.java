@@ -72,6 +72,7 @@ public class CardService {
         cardRepository.save(card);        
 
         response.setId(card.getId());
+        response.setName(card.getName());
         response.setCreated(card.getCreationDate());
 
 
@@ -148,12 +149,13 @@ public class CardService {
 
         Card card = cardRepository.findById(id)
         .orElseThrow(CardNotFoundException::new);
+        
+        cardDTO.setColor(card.getColor() != null ? card.getColor():"");        
+        cardDTO.setDescription(card.getDescription() != null? card.getDescription():"");
+        cardDTO.setName(card.getName() != null?card.getName():"");
+        cardDTO.setStatus(card.getStatus() != null ? card.getStatus() : "");
+        cardDTO.setEmail(card.getUser() != null ? card.getUser().getEmail() : "");
 
-        cardDTO.setColor(card.getColor());
-        cardDTO.setDescription(card.getDescription());
-        cardDTO.setName(card.getName());
-        cardDTO.setStatus(card.getStatus());
-        cardDTO.setEmail(card.getUser().getEmail());
 
         return cardDTO;
     }
@@ -179,7 +181,7 @@ public class CardService {
         return returnCardDTO;
     }
 
-    public List<CardDTO> findAll(CardDTO cardDTO) {
+    public List<CardDTO> findAll() {
 
         List<CardDTO> listDTO = new ArrayList<>();
 
@@ -187,11 +189,11 @@ public class CardService {
 
         for (Card card : list) {
             CardDTO cardDTOMapper = new CardDTO();
-            cardDTOMapper.setName(card.getName());
-            cardDTOMapper.setDescription(card.getDescription());
-            cardDTOMapper.setColor(card.getColor());
-            cardDTOMapper.setStatus(card.getStatus());
-            cardDTOMapper.setEmail(card.getUser().getEmail());
+            cardDTOMapper.setName(card.getName() != null?card.getName():"");
+            cardDTOMapper.setDescription(card.getDescription() != null? card.getDescription():"");
+            cardDTOMapper.setColor(card.getColor() != null ? card.getColor():"");
+            cardDTOMapper.setStatus(card.getStatus() != null ? card.getStatus() : "");
+            cardDTOMapper.setEmail(card.getUser() != null ? card.getUser().getEmail() : "");
             listDTO.add(cardDTOMapper);
         }
 

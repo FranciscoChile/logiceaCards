@@ -1,5 +1,6 @@
 package com.logicea;
 
+import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -46,6 +47,7 @@ final String token = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJmcmFuY2lzY28iLCJleHAiOjE2N
 
         Iterable<UserDTO> expected = userService.findAll();
 
+        assertNotNull(expected);
         //assertEquals(expected, users);
         verify(userRepository).findAll();
     }

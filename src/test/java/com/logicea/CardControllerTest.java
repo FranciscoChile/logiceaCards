@@ -25,20 +25,21 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
 import com.logicea.config.JwtAuthenticationEntryPoint;
 import com.logicea.config.JwtTokenUtil;
+import com.logicea.service.CardService;
 import com.logicea.service.JwtUserDetailsService;
-import com.logicea.service.UserService;
-import com.logicea.web.UserController;
+import com.logicea.web.CardController;
+
 
 @ComponentScan({"jwt"})
-@WebMvcTest(value = UserController.class, includeFilters = {
+@WebMvcTest(value = CardController.class, includeFilters = {
     @ComponentScan.Filter(type = FilterType.ASSIGNABLE_TYPE, classes = JwtTokenUtil.class)})
-public class UserControllerTest {
-    
+public class CardControllerTest {
+
     @Autowired
     private MockMvc mvc;
 
     @MockBean
-    private UserService userService;
+    private CardService cardService;
 
     @MockBean
     private JwtUserDetailsService jwtUserDetailsService;
@@ -51,18 +52,18 @@ public class UserControllerTest {
 
     private static UserDetails dummy;
     private static String jwtToken;
-
+    
     @BeforeEach
     public void setUp() {
         dummy = new User("user@email.com", "123456", new ArrayList<>());
         jwtToken = jwtUtil.generateToken(dummy);
     }
-    
+
     @Test
     public void givenToken_whenGetSecureRequest_thenOK() throws Exception {
         
         mvc.perform(
-            get("/api/users")
+            get("/api/cards")
             .header("Authorization", "Bearer " + jwtToken)
             .contentType(MediaType.APPLICATION_JSON_VALUE)
             .accept(MediaType.APPLICATION_JSON)
@@ -71,18 +72,18 @@ public class UserControllerTest {
     }
 
     @Test
-    public void listAllUsers_whenGetMethod()
+    public void listAllCards_whenGetMethod()
             throws Exception {
 
-        com.logicea.model.UserDTO user = new com.logicea.model.UserDTO();
-        user.setEmail("");
+        com.logicea.model.CardDTO card = new com.logicea.model.CardDTO();
+        card.setName("");
 
-        List<com.logicea.model.UserDTO> allUsers = List.of(user);
+        List<com.logicea.model.CardDTO> allCards = List.of(card);
 
-        when(userService.findAll()).thenReturn(allUsers);
+        when(cardService.findAll()).thenReturn(allCards);
 
         RequestBuilder request = MockMvcRequestBuilders
-                .get("/api/users")
+                .get("/api/cards")
                 .header("Authorization", "Bearer " + jwtToken)
                 .contentType(MediaType.APPLICATION_JSON_VALUE)
                 .accept(MediaType.APPLICATION_JSON);
@@ -93,8 +94,11 @@ public class UserControllerTest {
             //.andExpect(jsonPath("$", hasSize(1)))
             //.andExpect(jsonPath("$[0].name", is(user.getName())));
 
-        
-        assertNotNull(result.getResponse().getContentAsString());        
+        assertNotNull(result.getResponse().getContentAsString());
 
-    }
+        }
+    
+
+
+
 }

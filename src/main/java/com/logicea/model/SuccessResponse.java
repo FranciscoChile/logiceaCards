@@ -15,6 +15,7 @@ public class SuccessResponse {
     
     private Long id;
     private String email;
+    private String name;
     private Date created;
     private Date updated;
 
