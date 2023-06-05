@@ -13,7 +13,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"email\" : \"fran@world.com\",\n    \"password\" : \"holamundo\"\n//    \"email\" : \"hello@world.com\",\n//    \"password\" : \"password\"\n}",
+					"raw": "{\n//    \"email\" : \"fran@world.com\",\n//    \"password\" : \"holamundo\"\n//    \"email\" : \"test@world.com\",\n//    \"password\" : \"password\"\n    \"email\" : \"admin@world.com\",\n    \"password\" : \"password\"\n\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -261,7 +261,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"dataOption\": \"all\",\n    \"searchCriteriaList\": [\n        {\n            \"filterKey\": \"email\",\n            \"operation\": \"eq\",\n            \"value\":\"fran@world.com\"\n        }\n    ]    \n\n}",
+					"raw": "{\n    \"dataOption\": \"all\",\n    \"searchCriteriaList\": [\n        {\n            \"filterKey\": \"email\",\n            \"operation\": \"eq\",\n            \"value\":\"fran@world.com\"\n        },        \n        {\n            \"filterKey\": \"name\",\n            \"operation\": \"eq\",\n            \"value\":\"card1\"\n        },\n        {\n            \"filterKey\": \"color\",\n            \"operation\": \"eq\",\n            \"value\":\"#666666\"\n        },\n        {\n            \"filterKey\": \"status\",\n            \"operation\": \"eq\",\n            \"value\":\"To Do\"\n        },\n        {\n            \"filterKey\": \"creationDate\",\n            \"operation\": \"gt\",\n            \"value\":\"2023-05-01\"\n        }\n    ]    \n\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -343,7 +343,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJmcmFuQHdvcmxkLmNvbSIsImV4cCI6MTY4NTc4NjQ1NywiaWF0IjoxNjg1NzY4NDU3fQ.VnMJRebGOLHmhEcEHE_PlnBnARUEUqiCFTUzUtV9Qa4OrYxn9NzCDEkbiC2SV60hgjPmfgrCiHI8p2FcfWnH_A",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkB3b3JsZC5jb20iLCJleHAiOjE2ODU5NDE2MjMsImlhdCI6MTY4NTkyMzYyM30.9vWH4zUUNbau1qcCulTfURGR3hu1dVtc2-dsKuTXFCKbz90n-UXZWMAhnFkcTzk1kENAXGExELRLqrctbaOgrQ",
 							"type": "string"
 						}
 					]
@@ -352,7 +352,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"id\" :4,\n    \"description\": \"\",\n    \"color\":\"\"\n    \n}",
+					"raw": "{\n    \"id\" :4,\n    \"description\": \"\",\n    \"color\":\"\",\n    \"email\":\"test@world.com\"\n    \n}",
 					"options": {
 						"raw": {
 							"language": "json"
